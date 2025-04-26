@@ -1,0 +1,17 @@
+class VeicoloServizioRifornimento{
+    private Semaforo semaforo = new Semaforo(1);
+
+    public void rifornisciAereo(Aereo a, float quantitaBenzina){
+        semaforo.P();
+
+        if(a.getSerbatoio() + quantitaBenzina <= a.getCapacitaMassimaSerbatoio()){
+            a.rifornisci(quantitaBenzina);
+            System.out.println(Constants.GREEN +"Rifornimento avvenuto con successo");
+        
+        } else {
+            System.out.println(Constants.RED +"Rifornire l'aereo con meno benzina");
+        }
+    
+        semaforo.V();
+    }
+}
