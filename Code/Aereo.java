@@ -7,6 +7,7 @@ public class Aereo {
     private float capacitaMassimaSerbatoio;
     private float capacitaStiva;
     private float capacitaMassimaStiva;
+    
 
 
     public Aereo(String codiceVolo, double pesoMaxBagagli, double pesoBagagli, boolean soloAndata, float serbatoio, float capacitaMassimaSerbatoio, float capacitaStiva, float capacitaMassimaStiva){
@@ -100,7 +101,8 @@ public class Aereo {
     }
 
     public void rifornisci(float quantitaBenzina){
-        int quantita = getSerbatoio() + quantitaBenzina;
+    
+        float quantita = getSerbatoio() + quantitaBenzina;
         setSerbatoio(quantita);
     }
 }
