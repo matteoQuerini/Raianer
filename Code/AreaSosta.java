@@ -8,7 +8,7 @@ class AreaSosta{
     public void aggiungiAereo(Aereo a){
         semaforo.P();
         
-        if(aerei.size() < MAX_POSTI){
+        if(aereiPresenti.size() < MAX_POSTI){
             aereiPresenti.add(a);
             System.out.println(Constants.GREEN + "Aereo aggiunto all'area di sosta" + Constants.RESET);
 
@@ -22,7 +22,7 @@ class AreaSosta{
     public void rimuoviAereo(Aereo a){
         for(Aereo aereo : aereiPresenti){
             if(aereo.equals(a)){
-                aereiPresenti.remouve(a);
+                aereiPresenti.remove(a);
             }
         }
     }
