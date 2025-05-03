@@ -75,30 +75,62 @@ public class Aereoporto {
 
         semaforo.P();
         for (int i = 0; i < piste.size(); i++) {
-         if(piste.get(i).getOccupata() == false){
             if(aereiPresenti.contains(a)){
-                if(a.getPesoBagagli() <=  a.getPesoMaxBagagli() && a.getCapacitaStiva()<= a.getCapacitaMassimaStiva() && a.getSerbatoio() == a.getCapacitaMassimaSerbatoio()){
-                Pista pista = piste.get(i);
-                pista.usaPista();
-                pista.setA(a);
-                
-                System.out.println(Constants.GREEN + "Aereo decollato" + Constants.RESET);
-                pista.liberaPista();
-                aereiPresenti.remove(a);
-                }else{
-                    System.out.println(Constants.RED + "Aereo non idoneo al decollo" + Constants.RESET);
+                if(a.getStato().equals("in area di sosta")|| a.getStato().equals("nell'hangar")){
+                    areaSosta.rimuoviAereo(a);
+                    hangar.rimuoviAereo(a);
+                    a.setStato("perparzione al decollo");
+                    if(piste.get(i).getOccupata() == false){
+                        
+                            if(a.getPesoBagagli() <=  a.getPesoMaxBagagli() && a.getCapacitaStiva()<= a.getCapacitaMassimaStiva() && a.getSerbatoio() == a.getCapacitaMassimaSerbatoio()){
+                                Pista pista = piste.get(i);
+                                pista.usaPista();
+                                pista.setA(a);
+                                
+                                System.out.println(Constants.GREEN + "Aereo decollato" + Constants.RESET);
+                                pista.liberaPista();
+
+                                aereiPresenti.remove(a);
+                                aereiSoloAndata.add(a);
+                            }else{
+                                System.out.println(Constants.RED + "Aereo non idoneo al decollo" + Constants.RESET);
+                            }
+                    
+
+                        } else {
+                            System.out.println(Constants.RED + "Pista occupata" + Constants.RESET);
+                        }
+
                 }
             }else{
+
                 System.out.println(Constants.RED + "Aereo non trovato nell'aeroporto" + Constants.RESET);
             }
+            }
+        semaforo.V();
 
+    }
+
+    public void gestisciAtteraggio(Aereo a){
+
+        semaforo.P();
+        for (int i = 0; i < piste.size(); i++) {
+            if(piste.get(i).getOccupata() == false){
+            if(!aereiSoloAndata.get(i).equals(a)){
+                    System.out.println("l'aereo è atterrato");
+
+                    }else{
+                        System.out.println(Constants.RED + "Aereo non idoneo all'atterraggio" + Constants.RESET);
+                    }
+               
             } else {
                 System.out.println(Constants.RED + "Pista occupata" + Constants.RESET);
             }
         }
-        semaforo.V();
+
 
     }
+    
 
     
 

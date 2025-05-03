@@ -11,6 +11,7 @@ public class Hangar {
         
         if(aereiPresenti.size() < MAX_POSTI){
             aereiPresenti.add(a);
+            a.setStato("nell'hangar");
             System.out.println(Constants.GREEN + "Aereo aggiunto all'hangar" + Constants.RESET);
         } else {
             System.out.println(Constants.RED + "Hangar pieno" + Constants.RESET);

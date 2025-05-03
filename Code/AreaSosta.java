@@ -10,6 +10,7 @@ class AreaSosta{
         
         if(aereiPresenti.size() < MAX_POSTI){
             aereiPresenti.add(a);
+            a.setStato("in area di sosta");
             System.out.println(Constants.GREEN + "Aereo aggiunto all'area di sosta" + Constants.RESET);
 
         } else {
