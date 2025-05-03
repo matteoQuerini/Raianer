@@ -32,11 +32,10 @@ public class Pista {
         M_pista.P();
         this.occupata = true;
         System.out.println(Constants.GREEN + "pista viene utilizata da l'aereo:" + Constants.RESET + a.getCodiceVolo());
-        M_pista.V();
-    }
-    
+       
+    }   
     public void liberaPista(){
-        M_pista.P();
+ 
         this.occupata = false;
         System.out.println(Constants.GREEN + "pista viene liberata da l'aereo:" + Constants.RESET + a.getCodiceVolo());
         M_pista.V();

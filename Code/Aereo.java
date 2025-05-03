@@ -7,6 +7,7 @@ public class Aereo {
     private float capacitaMassimaSerbatoio;
     private float capacitaStiva;
     private float capacitaMassimaStiva;
+    private String stato;
     
 
 
@@ -24,6 +25,13 @@ public class Aereo {
 
     //GETTER E SETTER
 
+    public String getStato(){
+        return stato;
+    }
+
+    public void setStato(String stato){
+        this.stato = stato;
+    }
 
     public String getCodiceVolo(){
         return codiceVolo;
