@@ -5,8 +5,8 @@ class VeicoloServizioBagagli{
     public void caricaBagagli(Aereo a, float pesoBagaglio){
         semaforo.P();
 
-        if(a.getStiva() + pesoBagaglio <= a.getCapacitaMassimaStiva){
-            a.caricaBagagli();
+        if(a.getCapacitaStiva() + pesoBagaglio <= a.getCapacitaMassimaStiva()){
+            a.caricaBagagli(pesoBagaglio);
             System.out.println(Constants.GREEN +"Bagagli caricati con successo sull'aereo con codice di volo: " + a.getCodiceVolo());
         
         } else {
