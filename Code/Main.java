@@ -10,7 +10,7 @@ public class Main {
         // Thread per gestire gli aerei
         Thread threadAereo1 = new Thread(() -> {
             aeroporto.getHangar().aggiungiAereo(aereo1);
-            aereo1.rifornisci(500.0f); // Rifornimento completo
+            aereo1.rifornisci(500.0f); 
             veicolo.caricaBagagli(aereo1, 300.0f);
             aeroporto.gestisciDecollo(aereo1);
         });
