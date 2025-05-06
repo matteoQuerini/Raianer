@@ -5,9 +5,8 @@ public class Pista {
     private  Semaforo M_pista;
 
 
-    public Pista(Aereo a) {
+    public Pista() {
         this.occupata = false;
-        this.a = a;
         this.M_pista = new Semaforo(1);
     }
 
@@ -28,16 +27,16 @@ public class Pista {
     }
 
 
-    public void usaPista(){
+    public void usaPista() {
         M_pista.P();
         this.occupata = true;
-        System.out.println(Constants.GREEN + "pista viene utilizata da l'aereo:" + Constants.RESET + a.getCodiceVolo());
-       
-    }   
+        System.out.println(Constants.GREEN + "Pista in uso "+ Constants.RESET);
+    }
+
     public void liberaPista(){
  
         this.occupata = false;
-        System.out.println(Constants.GREEN + "pista viene liberata da l'aereo:" + Constants.RESET + a.getCodiceVolo());
+        System.out.println(Constants.GREEN + "pista viene liberata " + Constants.RESET);
         M_pista.V();
     }
 

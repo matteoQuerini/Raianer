@@ -10,6 +10,7 @@ class VeicoloServizioRifornimento{
         
         } else {
             System.out.println(Constants.RED +"Rifornire l'aereo con meno benzina");
+            a.rifornisci(a.getCapacitaMassimaSerbatoio());
         }
     
         semaforo.V();

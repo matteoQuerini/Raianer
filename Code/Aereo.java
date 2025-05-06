@@ -7,7 +7,7 @@ public class Aereo {
     private float capacitaMassimaSerbatoio;
     private float capacitaStiva;
     private float capacitaMassimaStiva;
-    private String stato;
+    private String stato = "";
     
 
 
@@ -20,6 +20,7 @@ public class Aereo {
         this.capacitaMassimaSerbatoio = capacitaMassimaSerbatoio;
         this.capacitaStiva = capacitaStiva;
         this.capacitaMassimaStiva = capacitaMassimaStiva;
+
     }
 
 
