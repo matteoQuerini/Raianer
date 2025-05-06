@@ -1,9 +1,17 @@
 import java.util.*;
 
 class AreaSosta{
-    ArrayList<Aereo> aereiPresenti = new ArrayList<Aereo>();
+    ArrayList<Aereo> aereiPresenti;
     private final int MAX_POSTI = 3;
     private Semaforo semaforo = new Semaforo(3);
+    private VeicoloServizioBagagli veicoloServizioBagagli;
+    private VeicoloServizioRifornimento veicoloServizioRifornimento;
+    
+    public AreaSosta(){
+        this.aereiPresenti = new ArrayList<Aereo>();
+        this.veicoloServizioBagagli = new VeicoloServizioBagagli();
+        this.veicoloServizioRifornimento = new VeicoloServizioRifornimento();
+    }
 
     public void aggiungiAereo(Aereo a){
         semaforo.P();
@@ -30,5 +38,17 @@ class AreaSosta{
 
     public boolean equals(Object obj) {
         return (this == obj);
+    }
+
+    public void rifornisciAereo(Aereo a, float quantitaBenzina){
+        veicoloServizioRifornimento.rifornisciAereo(a, quantitaBenzina);
+    }
+
+    public void caricaBagagli(Aereo a, float pesoBagaglio){
+        veicoloServizioBagagli.caricaBagagli(a, pesoBagaglio);
+    }
+    
+    public void scaricaBagagli(Aereo a){
+        veicoloServizioBagagli.scaricaBagagli(a);
     }
 }
