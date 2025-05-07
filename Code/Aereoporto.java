@@ -53,7 +53,7 @@ public class Aereoporto {
         try {
             if (hangar.aggiungiAereo(aereo)) {
                 aereiPresenti.add(aereo);
-                System.out.println(Constants.GREEN + "Aereo aggiunto all'hangar" + Constants.RESET);
+                System.out.println(Constants.GREEN + "Aereo " +aereo.getCodiceVolo()+ " aggiunto all'hangar" + Constants.RESET);
             } else {
                 System.out.println(Constants.RED + "Hangar pieno!" + Constants.RESET);
             }
@@ -66,9 +66,9 @@ public class Aereoporto {
         semaforoAeroporto.P();
         try {
             if (aereiPresenti.remove(a)) {
-                System.out.println(Constants.GREEN + "Aereo rimosso dall'aeroporto" + Constants.RESET);
+                System.out.println(Constants.GREEN + "Aereo " +a.getCodiceVolo()+ " rimosso dall'aeroporto" + Constants.RESET);
             } else {
-                System.out.println(Constants.RED + "Aereo non trovato" + Constants.RESET);
+                System.out.println(Constants.RED + "Aereo " +a.getCodiceVolo()+ " non trovato" + Constants.RESET);
             }
         } finally {
             semaforoAeroporto.V();

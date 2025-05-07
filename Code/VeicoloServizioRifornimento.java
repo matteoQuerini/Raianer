@@ -6,10 +6,10 @@ class VeicoloServizioRifornimento{
 
         if(a.getSerbatoio() + quantitaBenzina <= a.getCapacitaMassimaSerbatoio()){
             a.rifornisci(quantitaBenzina);
-            System.out.println(Constants.GREEN +"Rifornimento avvenuto con successo");
+            System.out.println(Constants.GREEN +"Rifornimento dell'aereo " +a.getCodiceVolo()+ " avvenuto con successo");
         
         } else {
-            System.out.println(Constants.RED +"Rifornire l'aereo con meno benzina");
+            System.out.println(Constants.RED +"Rifornire l'aereo " +a.getCodiceVolo()+ "con meno benzina");
             a.rifornisci(a.getCapacitaMassimaSerbatoio());
         }
     
